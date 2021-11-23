@@ -1,0 +1,33 @@
+
+.Flexer {
+    position: absolute;
+    min-height: 18vh;
+    width: 15vw;
+    z-index: 111;
+    top: 1rem;
+    left: 1rem;
+    text-decoration: none;
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-end;
+    cursor: pointer;
+    opacity: .8;
+    transition: all .1s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+.Flexer:hover {
+    opacity: 1;
+}
+.Flexer img {
+    height: 67px;
+    width: auto;
+    border: 3px solid #4895b9;;
+    border-radius: 4px;
+    box-shadow: 2px 2px 15px #072a3aad;
+}
+.Flexer h3 {
+    margin: 0;
+    color: #4895b9;
+    text-shadow: 1px 2px 10px #54c4f8d7;
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 1em;
+}

@@ -1,0 +1,16 @@
+.wrapper::-webkit-scrollbar {
+    width: .5em;
+}
+   
+.wrapper::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+.wrapper::-webkit-scrollbar-thumb {
+    background-color: #4895b9;
+    outline: 1px solid #2d7fa5;
+}
+@media (max-width: 800px) {
+    .wrapper {
+        display: none;
+    }
+}

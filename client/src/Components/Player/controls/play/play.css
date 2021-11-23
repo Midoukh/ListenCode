@@ -1,0 +1,28 @@
+.play{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgb(136,255,250);
+    background: linear-gradient(0deg, rgb(135, 241, 236) 0%,  rgb(8, 134, 177) 100%);    
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    box-sizing: border-box;
+    padding: 0 1.4rem;
+
+}
+.play, .play img{
+    cursor: pointer;
+}
+.play img{
+    height: 23px;
+}
+/*@media (max-width: 800px) {
+    .play {
+        width: 40px;
+        height: 40px;
+    }
+    .play img{
+        height: 15px;
+    }
+}*/

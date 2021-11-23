@@ -1,0 +1,29 @@
+
+.Content {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #161515;
+    z-index: 111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Fira Sans', sans-serif;
+    display: flex;
+    flex-flow: column;
+    min-height: 55vh;
+    justify-content: space-evenly;
+}
+.ErrorImage {
+    height: 50vh;
+    box-shadow: 2px 2px 25px rgba(0,0,0,.5);
+    border-radius: 8px;
+}
+
+.ErrorH1 {
+    color: white;
+    margin: 0;
+    margin-bottom: .7rem;
+}

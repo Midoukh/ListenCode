@@ -1,0 +1,28 @@
+.pause{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgb(136,255,250);
+    background: linear-gradient(0deg, rgb(135, 241, 236) 0%,  rgb(8, 134, 177) 100%);    
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    box-sizing: border-box;
+    padding: 0 1.4rem;
+
+}
+.pause, .pause div{
+    cursor: pointer;
+}
+.pause div{
+    height: 25px;
+    width: 5px;
+    background-color: rgb(0, 1, 22);
+}
+/*@media (max-width: 800px) {
+    .pause {
+        width: 40px;
+        height: 40px;
+    }
+
+}*/

@@ -1,0 +1,136 @@
+{
+    "lofi": [
+        {
+            "youtubeId": "f02mOEt11OQ",
+            "id": "5a5e88-d855-53b6-fc3-66e1ae84e6ee",
+            "name": "lofi playlist 1",
+            "genre": "lofi"
+        },
+        {
+            "youtubeId": "_ITiwPMUzho",
+            "id": "c0075c-cb7c-7888-a21-50f3720f2250",
+            "name": "lofi playlist 2",
+            "genre": "lofi"
+        },
+        {
+            "youtubeId": "BPVu5xaZk-4",
+            "id": "5088516-b1ba-e78e-66a3-28fd4c8814bb",
+            "name": "lofi playlist 3",
+            "genre": "lofi"
+        },
+        {
+            "youtubeId": "rJdHvKWvk3Q",
+            "id": "7754d7-4603-8ce4-3db6-6e105adffc8",
+            "name": "lofi playlist 4",
+            "genre": "lofi"
+        },
+        {
+            "youtubeId": "akCpMZldg1I",
+            "id": "8fc72e-1a03-885f-df84-e2f355d3e6",
+            "name": "lofi playlist 5",
+            "genre": "lofi"
+        }
+    ],
+    "metal": [
+        {
+            "youtubeId": "Lmp2zJ7UNPM",
+            "id": "a52c13a-8e52-00c-6752-6ac7e6b5688",
+            "name": "metal playlist 1",
+            "genre": "metal"
+        },
+        {
+            "youtubeId": "czN_8_uV91g",
+            "id": "60b8eb1-d023-ed7c-4865-d1ec80ba6",
+            "name": "metal playlist 2",
+            "genre": "metal"
+        },
+        {
+            "youtubeId": "Cu7xwv2IePE",
+            "id": "601fcdd-870-2e0c-05-dcd37820f7f",
+            "name": "metal playlist 3",
+            "genre": "metal"
+        },
+        {
+            "youtubeId": "qXoVHLaGdqM",
+            "id": "f00d4da-f7e1-4dbd-bd0d-dca3c508b2db",
+            "name": "metal playlist 4",
+            "genre": "metal"
+        },
+        {
+            "youtubeId": "XqFiG-B1ILg",
+            "id": "3df4d1-cdfa-5e34-e126-ec5078866d7",
+            "name": "metal playlist 5",
+            "genre": "metal"
+        }
+    ],
+    "war": [
+        {
+            "youtubeId": "E17hDWJKBsY",
+            "id": "84265d3-385f-c047-bc3-43758e225137",
+            "name": "war playlist 1",
+            "genre": "war"
+        },
+        {
+            "youtubeId": "2F6-GCMHZNI",
+            "id": "bf2abbf-b06-fe17-54c6-0cadaa103a7c",
+            "name": "war playlist 2",
+            "genre": "war"
+        },
+        {
+            "youtubeId": "K5VsgMRttvQ",
+            "id": "33d78ac-1e4c-bc70-c17a-dc0327b6b415",
+            "name": "war playlist 3",
+            "genre": "war"
+        },
+        {
+            "youtubeId": "FnK6dyxUpyE",
+            "id": "511b56e-6783-3a75-8ddf-7ecde867ad27",
+            "name": "war playlist 4",
+            "genre": "war"
+        },
+        {
+            "youtubeId": "I9NL6In0fyo",
+            "id": "51bf328-c58a-e10d-e2-72bf12fd3316",
+            "name": "war playlist 5",
+            "genre": "war"
+        }
+    ],
+    "techno": [
+        {
+            "youtubeId": "5ZBgx1NeUWg",
+            "id": "1e87111-3615-b73-1ed1-c50fd6120837",
+            "name": "techno playlist 1",
+            "genre": "techno"
+        },
+        {
+            "youtubeId": "Hit6WrBuk_g",
+            "id": "8b3fae3-3b3e-c86d-4d47-e3e6b22414",
+            "name": "techno playlist 2",
+            "genre": "techno"
+        },
+        {
+            "youtubeId": "9aZ1LokBIvw",
+            "id": "0720e7-820d-d71e-a4b-40e7dbc2304",
+            "name": "techno playlist 3",
+            "genre": "techno"
+        },
+        {
+            "youtubeId": "zY325DlV5HI",
+            "id": "cc18734-3bc-828d-a341-658eeb6768",
+            "name": "techno playlist 4",
+            "genre": "techno"
+        },
+        {
+            "youtubeId": "tuPlG1DffnE",
+            "id": "bc47a7-b0ad-66f-d461-332cd800c08",
+            "name": "techno playlist 5",
+            "genre": "techno"
+        },
+        {
+            "youtubeId": "JrQLGtNeguk",
+            "id": "f4c6ecc-50bb-43ff-0578-3162171be2",
+            "name": "techno playlist 6",
+            "genre": "techno"
+        }
+    ]
+}

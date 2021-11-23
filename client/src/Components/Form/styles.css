@@ -1,0 +1,194 @@
+.Container {
+    width: 80vw;
+    min-height: 75vh;
+    max-height: 75vh;
+    display: flex;
+    border-radius: 12px;
+    position: relative;
+    animation-name: formScale;
+    animation-duration: 200ms;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+    font-family: 'Fira Sans', sans-serif;
+}
+.Close {
+    height: 40px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+}
+.FormSt {
+    background-color: white;
+    width: 40vw;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: .8rem 1rem;
+   
+}
+.FormSt input {
+    padding: 1rem;
+    padding-left: 0;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid rgb(119, 119, 119);
+}
+.FormSt input:focus{
+    border-bottom: 1px solid rgb(13, 66, 165);
+
+}
+.FormSt button {
+    padding: .8rem 1.5rem;
+    outline: none;
+    background-color: rgb(64, 117, 216);
+    border: 1px solid rgb(46, 97, 190);
+    color: white;
+    text-transform: uppercase;
+    font-weight: 700;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all .7s cubic-bezier(1, 0, 0, 1);
+    /*opacity: .4;
+    cursor: not-allowed;*/
+}
+.FormSt button:hover {
+    transform: scale(1.02);
+}
+.InputWrapper select {
+    width: 100%;
+    min-width: 15ch;
+    max-width: 30ch;
+    border: 1px solid #777;
+    border-radius: 0.25em;
+    padding: 0.25em 0.5em;
+    font-size: 1.25rem;
+    cursor: pointer;
+    line-height: 1.1;
+    background-color: #fff;
+    background-image: linear-gradient(to top, #f9f9f9, #fff 33%);
+}
+.InputWrapper select:focus {
+    outline: lightskyblue;
+}
+.InputWrapper {
+    display: flex;
+    flex-flow: column;
+}
+.InputWrapper label {
+    margin-bottom: .6rem;
+}
+.InputWrapper label span{
+    color: rgb(155, 6, 6);
+}
+.Illustration {
+    height: auto;
+    width: 40vw;
+    display: flex;
+    flex-flow: column;
+ 
+}
+.ImageWrapper{
+
+    background-color: #ed9d60;
+}
+
+.ImageWrapper img {
+    max-width: 100%;
+    max-height: 100%;
+}
+.Infos {
+    background-color: white;
+    min-width: 40vw;
+    height: 100%;
+    border-left: 2px solid rgba(0,0,0,.8);
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    box-sizing: border-box;
+}
+.Infos img {
+    height: 60px;
+    margin-right: .5rem;
+}
+.Error {
+    margin-top: 0.4rem;
+    color: rgb(155, 6, 6);
+    animation-name: errorAnimate;
+    animation-duration: 200ms;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+}
+.InfosMobile {
+    display: none;
+}
+@keyframes formScale {
+    0%{
+        transform: scale(0.5);
+    }
+    50%{
+        transform: scale(0.8);
+
+    }
+    100%{
+        transform: scale(1);
+
+    }
+}
+@keyframes errorAnimate {
+    0%{
+        transform: translateX(10px);
+    }
+    25%{
+        transform: translateX(-10px);
+    }
+    50%{
+        transform: translateX(10px);
+    }
+    60%{
+        transform: translateX(-10px);
+    }
+    75%{
+        transform: translateX(10px);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+
+
+@media (max-width: 700px) {
+    .Container {
+        flex-flow: column;
+        margin-bottom: 5rem;
+    }
+    .FormSt {
+        width: 100%;
+        min-height: 90vh;
+
+    }
+    .Illustration, .Infos {
+        display: none;
+    }
+    .InfosMobile {
+        background-color: white;
+        min-width: 40vw;
+        height: 10vh;
+        display: flex;
+        align-items: center;
+        padding: 1 1rem;
+        box-sizing: border-box;
+        font-size: 1em;
+    }
+    .InfosMobile img {
+        height: 60px;
+        margin-right: .5rem;
+    }
+}
+@media (max-width: 400px) {
+    .InfosMobile {
+      
+        font-size: .7em;
+    }
+}

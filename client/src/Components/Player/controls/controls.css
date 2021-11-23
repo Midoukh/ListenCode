@@ -1,0 +1,45 @@
+.controls{
+    width: 50vw;
+    height: 15vh;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    position: relative;
+    bottom: 0;
+}
+.Button{
+    height: 28px;
+    cursor: pointer;
+    box-shadow: 2px 2px 50px rgba(255, 255, 255, .3);
+    border-radius: 50%;
+}
+.Figure {
+    margin: 0;
+}
+.Figure figcaption {
+    display: inline;
+    font-size: .65em;
+    margin-left: .3rem;
+    position: absolute;
+    font-family: 'Fira Sans', sans-serif;
+
+}
+@media (max-width: 800px) {
+    .controls {
+        width: 80vw;
+    }
+    .Button{
+        height: 20px;
+    }
+}
+@media (max-width: 550px) {
+    .controls {
+        margin: 0;
+    }
+}
+@media (max-width: 500px) {
+    .controls {
+        width: 90vw;
+    }
+}

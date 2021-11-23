@@ -1,0 +1,94 @@
+.details{
+    position: absolute;
+    top: 1rem;
+    margin-left: 2rem;
+    margin-bottom: 4rem;
+    color: white;
+    text-shadow: rgba(0, 255, 255, 0.5) 1px 1px 70px;
+}
+.details h1 {
+    margin-top: .8rem;
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 1.1em;
+    text-transform: uppercase;
+    max-width: 25vw;
+}
+.IconWrapper {
+    display: flex;
+    align-items: center;
+}
+.IconWrapper img {
+    height: 25px;
+    margin-right: .5rem;
+}
+.IconWrapper h4 {
+    margin: 0;
+}
+.Disk {
+    margin-top: 1rem;
+}
+.DiskImg {
+    height: 50px;
+    width: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #5ab3ca;
+    box-shadow: 1px 2px 25px rgba(0, 0, 0, 0.61);
+    animation-name: diskmating;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+}
+
+.InfoIcon:hover {
+    transform: translate(540%, 296%);
+}
+@keyframes diskmating {
+    0%{
+        transform: rotateZ(0);
+    }
+    0%{
+        transform: rotateZ(360deg);
+    }
+}
+.Info {
+    height: 30px;
+}
+@media (max-width: 800px){
+    .details {
+        background-color: rgb(22, 21, 21);
+        top: 0;
+        padding: 1rem;
+        z-index: 11;
+        display: none;
+        animation-name: Scale;
+        animation-duration: 200ms;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: 1;
+    }
+    .Close {
+        height: 40px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        cursor: pointer;
+    }
+   
+}
+@media (max-width: 700px) {
+    .details {
+        padding: 3rem;
+    }
+}
+@keyframes Scale {
+    0%{
+        transform: scale(0.5);
+    }
+    50%{
+        transform: scale(0.8);
+
+    }
+    100%{
+        transform: scale(1);
+
+    }
+}
