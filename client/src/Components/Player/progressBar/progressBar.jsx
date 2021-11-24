@@ -35,7 +35,7 @@ const ProgressBar = ({ time, currenTime, handlePlayVideoAt }) => {
       <span className={classes.Info}>
         {isPlayingFromFavs ? '(ℹ Now playing from your Fav Playlists)' : ''}
         {isIframeLoading.loading
-          ? `Playing the ${isIframeLoading.direction} Playlist...`
+          ? !isPlayingFromFavs && `Playing the ${isIframeLoading.direction} Playlist...`
           : ''}
       </span>
       <h3 className={classes.Num}>{parsedTime}</h3>

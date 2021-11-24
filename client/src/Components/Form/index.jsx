@@ -12,7 +12,12 @@ import closeIcon from '../../assets/close.png';
 import styles from './styles.css';
 import { getAllSongs } from '../../data/songsScript.js';
 
-import { handleGetAllSongs } from '../../actions';
+import {
+  handleGetAllSongs,
+  handleGetCurrentSong,
+  handleChangeCurrentBackground,
+} from '../../actions';
+import { handleChangeIframeSrc } from '../../Utility/changeIframeSrc';
 
 const options = [
   { value: 'lofi', label: 'Lofi' },
@@ -35,6 +40,7 @@ const AddingPlaylistForm = ({ handleClose }) => {
     try {
       const response = await axios.post('/add-song', data);
       console.log(response);
+      putCreatedPlaylstAsCurrPlaylst(response.data.data);
       setLoading((prev) => false);
       setTimeout(() => {
         handleClose();
@@ -73,26 +79,22 @@ const AddingPlaylistForm = ({ handleClose }) => {
       return true;
     }
   };
-  /*const handleEnableSubmitButton = (e) => {
-    console.log(e.target.name);
-    const { name: inputName, value } = e.target;
-    const updatedData = { ...formData };
+  //this function put the song that the user created as the current song
 
-    updatedData[inputName] = value;
+  const putCreatedPlaylstAsCurrPlaylst = (playLst) => {
+    console.log('Setting the current song');
 
-    setFormData((prev) => updatedData);
-    const { name, url, genre } = formData;
+    //dispatch adding playlist
+    //dispatch(handleAddAPlaylist(true));
 
-    if (name.length > 5 && url.length > 5) {
-      subBtnRef.current.removeAttribute('disabled');
-      subBtnRef.current.style.opacity = '1';
-      subBtnRef.current.style.cursor = 'pointer';
-    } else {
-      subBtnRef.current.setAttribute('disabled', true);
-      subBtnRef.current.style.opacity = '.4';
-      subBtnRef.current.style.cursor = 'not-allowed';
-    }
-  };*/
+    //dispatch the current song
+    dispatch(handleGetCurrentSong(playLst));
+    dispatch(handleChangeCurrentBackground(playLst.genre));
+
+    //change the iframe src
+    handleChangeIframeSrc(playLst.youtubeId);
+  };
+
   return (
     <div className={styles.Container}>
       <img

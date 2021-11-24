@@ -32,9 +32,9 @@ const colors = {
   war: '#947f26',
 };
 
-const Details = ({ details, style }) => {
+const Details = ({ style, details }) => {
   const dispatch = useDispatch();
-  const { infoMenuPosition } = useSelector((state) => state);
+  const { infoMenuPosition, currentSong } = useSelector((state) => state);
 
   //this function get called only on smaller screens
   const handleHideDetailsMobile = () => {

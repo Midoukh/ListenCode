@@ -15,7 +15,7 @@ import snowIcon from '../../assets/snow.gif';
 
 import { getAllSongs } from '../../data/songsScript';
 
-import { handleGetAllSongs, isPlayingFromFavs } from '../../actions';
+import { handleGetAllSongs, isPlayingFromFavsAction } from '../../actions';
 
 import Form from '../../Components/Form';
 import ConfirmAlert from '../../Components/UI/ConfirmAlert';
@@ -141,17 +141,18 @@ const BackGround = () => {
     //if already Playing from favs
     if (isPlayingFromFavs) {
       getAllSongs(dispatch, handleGetAllSongs);
-      dispatch(isPlayingFromFavs(false));
+      dispatch(isPlayingFromFavsAction(false));
       handleCloseAlertConfirm();
       return;
     }
+    console.log('Not playing from favs');
 
     //else
     //1 dispatch the songs so the data came from localStorage
     dispatch(handleGetAllSongs(favs));
 
     //2 dispatch isPlayingFromAction to true
-    dispatch(isPlayingFromFavs(true));
+    dispatch(isPlayingFromFavsAction(true));
 
     // close the alert
     handleCloseAlertConfirm();

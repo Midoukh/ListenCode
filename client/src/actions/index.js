@@ -10,6 +10,12 @@ export const handleGetCurrentSong = (payload) => {
     payload,
   };
 };
+export const handleAddAPlaylist = (payload) => {
+  return {
+    type: 'Add_PLAYLIST',
+    payload,
+  };
+};
 export const setFilter = (payload) => {
   return {
     type: 'SET_FILTER',
@@ -46,7 +52,7 @@ export const setPlayerPosition = (payload) => {
     payload,
   };
 };
-export const isPlayingFromFavs = (payload) => {
+export const isPlayingFromFavsAction = (payload) => {
   return {
     type: 'PLAY_FROM_FAVS',
     payload,

@@ -32,6 +32,15 @@
 .MobileIcons img:nth-child(2){
     animation-name: iconMatingN;
 }
+.WrapperLoader {
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 4rem;
+}
 @keyframes iconMatingP {
     0%{
         transform: rotateZ(0);

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import CircleLoader from 'react-spinners/CircleLoader';
+import PropagateLoader from 'react-spinners/PropagateLoader';
 
 import Controls from './controls/controls';
 import styles from './Player.css';
@@ -24,6 +25,7 @@ import genreIcon from '../../assets/war.png';
 
 const Player = () => {
   const dispatch = useDispatch();
+
   const {
     genre,
     volume,
@@ -31,12 +33,14 @@ const Player = () => {
     currentSong,
     playerPosition,
     infoMenuPosition,
+    isAddingPlaylist,
   } = useSelector((state) => state);
+
   const [isPausing, setIsPausing] = useState(false);
   const [loading, setLoading] = useState(false);
   const [currentPlaylist, setCurrentPlaylist] = useState(0);
   const [currentYoutubeId, setCurrentYoutubeId] = useState(
-    songs[genre][currentPlaylist].youtubeId
+    songs[genre][currentPlaylist] && songs[genre][currentPlaylist].youtubeId
   );
 
   const [reachTheEnd, setReachedTheEnd] = useState(false);
@@ -133,8 +137,10 @@ const Player = () => {
 
     if (currentPlaylist + 1 === genreLength) {
       setCurrentPlaylist(0);
+      dispatch(handleGetCurrentSong(songs[genre][0]));
     } else {
       setCurrentPlaylist((prev) => prev + 1);
+      dispatch(handleGetCurrentSong(songs[genre][currentPlaylist + 1]));
     }
     let id;
     if (currentPlaylist + 1 < genreLength) {
@@ -146,6 +152,7 @@ const Player = () => {
       id = songs[genre][0].youtubeId;
       setCurrentYoutubeId((prev) => songs[genre][0].youtubeId);
     }
+
     //handleChangeIframeSrc(id);
     handleChangeIframeSrc(id, iframeDom);
 
@@ -186,6 +193,7 @@ const Player = () => {
         songs[genre][currentPlaylist - 1].youtubeId,
         iframeDom
       );
+      dispatch(handleGetCurrentSong(songs[genre][currentPlaylist - 1]));
 
       handleCheckingIfSongIsFav(currentSong, dispatch, handleIsSongFavorite);
     }
@@ -301,10 +309,12 @@ const Player = () => {
 
   useEffect(() => {
     createPlayer();
+
     dispatch(handleGetCurrentSong(songs[genre][currentPlaylist]));
+
     document.addEventListener('keyup', handleKeyShortCuts);
     return () => document.removeEventListener('keyup', handleKeyShortCuts);
-  }, [currentYoutubeId, currentPlaylist, isLooping, handleKeyShortCuts]);
+  }, []);
   return (
     <>
       <Album />
@@ -319,7 +329,7 @@ const Player = () => {
         }}
       >
         {infoMenuPosition === 'normal' ? (
-          <Details details={songs[genre][currentPlaylist]} />
+          <Details details={currentSong} />
         ) : (
           <div className={styles.MobileIcons}>
             <img
@@ -335,14 +345,17 @@ const Player = () => {
             />
           </div>
         )}
-        {(iframePlayer !== null) & (iframePlayer !== undefined) &&
-          iframePlayer.playerInfo.duration && (
-            <ProgressBar
-              time={iframePlayer.playerInfo.duration}
-              currenTime={currenTime}
-              handlePlayVideoAt={handlePlayVideoAt}
-            />
-          )}
+        {iframePlayer ? (
+          <ProgressBar
+            time={iframePlayer.playerInfo.duration}
+            currenTime={currenTime}
+            handlePlayVideoAt={handlePlayVideoAt}
+          />
+        ) : (
+          <div className={styles.WrapperLoader}>
+            <PropagateLoader size={15} color="#50a1c0" />
+          </div>
+        )}
         {loading ? (
           <CircleLoader size={90} loading={true} color="#ffffff" />
         ) : (

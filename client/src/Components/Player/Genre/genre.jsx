@@ -55,10 +55,6 @@ const Genre = ({ customStyle }) => {
 
     //persiste the genre to local Storage
     new LocalStoring('genre', genre).set();
-
-    setTimeout(() => {
-      dispatch(setInfoMenuPos('hidden'));
-    }, 200);
   };
 
   //create a function that check if the genre has songs in it when we are playing from

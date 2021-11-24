@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux';
+import isAddingPlaylist from './addPlaylist.reducer';
 import backgroundReducer from './backgroundReducer';
 import currentSongReducer from './currentSongReducer';
 import setFilterReducer from './filterReducer';
@@ -23,6 +24,7 @@ const allReducers = combineReducers({
   playerPosition: playerPosReducer,
   infoMenuPosition: setInfoMenuReducer,
   isIframeLoading: iframeLoadingReducer,
+  isAddingPlaylist: isAddingPlaylist,
 });
 
 export default allReducers;

@@ -52,7 +52,7 @@ const Mute = ({ handleMuteUnmute, handleChangeVolume }) => {
     checkedPersistance();
   }, []);
   return (
-    <div class="mt-icon-music" style={{ fontSize: '9px' }}>
+    <div className="mt-icon-music" style={{ fontSize: '9px' }}>
       <input
         id="ujyldvzw.1.1"
         type="checkbox"
