@@ -273,6 +273,7 @@ const Player = () => {
 
   const handleKeysPauseAndPlay = () => {
     if (iframePlayer) {
+      console.log('There is an iframe');
       if (!isPausing) {
         play();
       } else {
@@ -311,10 +312,10 @@ const Player = () => {
     createPlayer();
 
     dispatch(handleGetCurrentSong(songs[genre][currentPlaylist]));
-
     document.addEventListener('keyup', handleKeyShortCuts);
     return () => document.removeEventListener('keyup', handleKeyShortCuts);
-  }, []);
+  }, [handleKeyShortCuts]);
+
   return (
     <>
       <Album />

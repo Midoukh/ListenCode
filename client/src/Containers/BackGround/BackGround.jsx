@@ -12,7 +12,7 @@ import addIcon from '../../assets/add.gif';
 import fullScreenIcon from '../../assets/expand.gif';
 import heartIcon from '../../assets/heart.gif';
 import snowIcon from '../../assets/snow.gif';
-
+import placeholder from '../../assets/placeholder.jpg';
 import { getAllSongs } from '../../data/songsScript';
 
 import { handleGetAllSongs, isPlayingFromFavsAction } from '../../actions';
@@ -52,6 +52,7 @@ const BackGround = () => {
   const dispatch = useDispatch();
 
   const [loadingBg, setLoading] = useState(false);
+  const [error, setError] = useState(null);
   const [currentBGIndex, setCurrentBGIndex] = useState(0);
   const [isFullScreen, setIsFullScreen] = useState(false);
   const [showModal, setShowModal] = useState(false);
@@ -110,10 +111,10 @@ const BackGround = () => {
   const handleShowAlertConfirm = () => {
     //check if there's any songs in the favorite list
     let notEmpty = false;
-
-    if (favs) {
-      for (let key in favs) {
-        if (favs[key].length) {
+    const favPlaylists = JSON.parse(new LocalStoring('favorites', null).get());
+    if (favPlaylists) {
+      for (let key in favPlaylists) {
+        if (favPlaylists[key].length) {
           notEmpty = true;
           break;
         }
@@ -156,6 +157,16 @@ const BackGround = () => {
 
     // close the alert
     handleCloseAlertConfirm();
+  };
+  const handleImageError = (e) => {
+    try {
+      if (e.type === 'error') {
+        e.target.src = placeholder;
+        setError('broken-image');
+      }
+    } catch (error) {
+      console.log(error);
+    }
   };
   useEffect(() => {
     const timer1 = setTimeout(() => {
@@ -271,10 +282,17 @@ const BackGround = () => {
           <figure
             className={`${styles.Effect} ${styles[filters[filter]]}`}
             style={{
-              backgroundImage: `url('${backgrounds[bg][currentBGIndex]}')`,
+              backgroundImage: error
+                ? `url('${placeholder}')`
+                : `url('${backgrounds[bg][currentBGIndex]}')`,
             }}
           >
-            <img src={backgrounds[bg][currentBGIndex]} alt="Back ground gif" />
+            <img
+              src={backgrounds[bg][currentBGIndex]}
+              alt="Back ground gif"
+              onError={handleImageError}
+              onLoad={(event) => setError('')}
+            />
             <figcaption>BackGound</figcaption>
           </figure>
         )}

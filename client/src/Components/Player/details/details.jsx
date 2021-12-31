@@ -83,7 +83,6 @@ const Details = ({ style, details }) => {
     </div>
   );
 };
-
 Details.propTypes = {
   details: PropTypes.object,
   style: PropTypes.object,

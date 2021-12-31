@@ -19,12 +19,12 @@ const Toggle = ({ handleAddCurrentSongToFavorites }) => {
   return (
     <div class="mt-heart" style={additionStyles}>
       <input
-        id="ujyldvzw.1.1"
+        id="ujyldvzw.1.1.6"
         type="checkbox"
         onClick={handleSwitch}
         ref={toggleRef}
       />
-      <label for="ujyldvzw.1.1"></label>
+      <label for="ujyldvzw.1.1.6"></label>
     </div>
   );
 };
