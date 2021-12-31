@@ -59,8 +59,6 @@ const storePlaylistInFS = async (playlist) => {
 };
 
 exports.getAllSongs = async (req, res) => {
-  handleGetThumbnail("req.body.url", "big", songs);
-
   try {
     res.status(200).json({
       status: "success",

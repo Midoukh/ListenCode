@@ -16,8 +16,8 @@ app.get("/", (req, res) => {
   res.end("<h1>Express app</h1>");
 });
 
-app.post("add-song", createPlayList);
-app.get("get-songs", getAllSongs);
+app.post("/add-song", createPlayList);
+app.get("/get-songs", getAllSongs);
 
 app.listen(process.env.PORT || 3000, () => {
   console.log(`Serving at port${process.env.PORT || 3000}`);
