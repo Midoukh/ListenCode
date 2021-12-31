@@ -58,22 +58,25 @@ const Details = ({ style, details }) => {
           alt="close"
         />
       )}
-      <h1>{details.name}</h1>
+      <h1>{details && details.name}</h1>
       <div className={styles.IconWrapper}>
-        <img src={icons[details.genre]} alt={details.genre} />
+        <img
+          src={details && icons[details.genre]}
+          alt={details && details.genre}
+        />
         <h4
           style={{
-            fontFamily: fonts[details.genre],
-            color: colors[details.genre],
+            fontFamily: details && fonts[details.genre],
+            color: details && colors[details.genre],
           }}
         >
-          {details.genre}
+          {details && details.genre}
         </h4>
       </div>
       <div className={styles.Disk}>
         <img
           className={styles.DiskImg}
-          src={details.thumbnail || disk}
+          src={(details && details.thumbnail) || disk}
           alt="disk"
         />
       </div>
