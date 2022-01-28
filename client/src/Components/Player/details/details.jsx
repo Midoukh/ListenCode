@@ -1,17 +1,19 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import { setInfoMenuPos } from '../../../actions';
-
 import styles from './details.css';
-
-import lofi from '../../../assets/coffee.png';
-import metal from '../../../assets/metal.png';
-import techno from '../../../assets/techno.png';
-import war from '../../../assets/war.png';
-import disk from '../../../assets/disk.png';
-import closeIcon from '../../../assets/close.png';
+import {
+  lofi,
+  metal,
+  techno,
+  war,
+  disk,
+  closeIcon,
+  fonts,
+  colors,
+} from './constants';
 
 const icons = {
   lofi,
@@ -19,22 +21,10 @@ const icons = {
   techno,
   war,
 };
-const fonts = {
-  lofi: 'Pacifico',
-  metal: "'Fira Sans', sans-serif",
-  techno: "'Share Tech Mono', monospace",
-  war: "'Warnes', cursive",
-};
-const colors = {
-  lofi: '#c55e41',
-  metal: '#5b2c50',
-  techno: '#4b9ac5',
-  war: '#947f26',
-};
 
 const Details = ({ style, details }) => {
   const dispatch = useDispatch();
-  const { infoMenuPosition, currentSong } = useSelector((state) => state);
+  const { infoMenuPosition } = useSelector((state) => state);
 
   //this function get called only on smaller screens
   const handleHideDetailsMobile = () => {

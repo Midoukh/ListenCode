@@ -47,7 +47,7 @@ const Player = () => {
   const [currenTime, setCurrenTime] = useState(null);
   const [iframePlayer, setIframePlayer] = useState(null);
   const [isLooping, setIsLooping] = useState(false);
-  //const [playerTarget, setPlayerTarget] = useState(null);
+
   const createPlayer = () => {
     setLoading(true);
     if (!window.YT) {
@@ -57,7 +57,6 @@ const Player = () => {
       // If script is already there, load the video directly
       loadVideo();
     }
-    //setCurrentYoutubeId(songs[genre][currentPlaylist].youtubeId);
   };
   const loadPlayerScript = () => {
     const tag = document.createElement('script');
@@ -69,12 +68,6 @@ const Player = () => {
     const firstScriptTag = document.getElementsByTagName('script')[0];
     firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
   };
-  /*const handleChangeIframeSrc = (id) => {
-    const iframeDom = iframePlayer.getIframe();
-    const newSrc = `https://www.youtube.com/embed/${id}?enablejsapi=1&origin=http%3A%2F%2Flocalhost%3A3000&widgetid=1`;
-    iframeDom.src = newSrc;
-    handleChangeVolume(volume);
-  };*/
 
   const loadVideo = () => {
     // the Player object is created uniquely based on the id in props
@@ -92,21 +85,18 @@ const Player = () => {
   };
 
   const onPlayerReady = (event) => {
-    event.target.playVideo();
+    //event.target.playVideo();
     event.target.setVolume(volume);
-    setIsPausing(true);
+    //setIsPausing(true);
     getTimeInterval(event.target);
   };
   const play = () => {
-    console.log('PLAYING');
-
     if (iframePlayer.playVideo) {
       setIsPausing(true);
       iframePlayer.playVideo();
     }
   };
   const pause = () => {
-    console.log('PAUSING');
     if (iframePlayer.pauseVideo) {
       setIsPausing(false);
       iframePlayer.pauseVideo();
@@ -283,7 +273,6 @@ const Player = () => {
   };
 
   const handleKeyShortCuts = (e) => {
-    console.log(e.key);
     switch (e.key) {
       case ' ':
         //if key pressed is space and it pausing

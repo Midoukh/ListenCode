@@ -25,7 +25,7 @@ const VolumeRange = ({ handleChangeVolume }) => {
         min="0"
         max="100"
         value={glbVolume}
-        class="range blue"
+        className="range blue"
         onChange={handleOnChange}
       />
     </div>

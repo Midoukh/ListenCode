@@ -59,7 +59,7 @@ const Mute = ({ handleMuteUnmute, handleChangeVolume }) => {
         onChange={handleMuteImmute}
         ref={muteRef}
       />
-      <label for="ujyldvzw.1.1"></label>
+      <label htmlFor="ujyldvzw.1.1"></label>
     </div>
   );
 };
