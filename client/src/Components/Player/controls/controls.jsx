@@ -22,6 +22,7 @@ const Controls = ({
   handleChangeVolume,
   handleMuteUnmute,
 }) => {
+  //destructuring global state
   const { isIframeLoading } = useSelector((state) => state);
 
   return (
